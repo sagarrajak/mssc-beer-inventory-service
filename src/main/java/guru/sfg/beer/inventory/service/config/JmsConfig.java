@@ -1,5 +1,6 @@
 package guru.sfg.beer.inventory.service.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,23 +9,15 @@ import org.springframework.jms.support.converter.MessageConverter;
 import org.springframework.jms.support.converter.MessageType;
 
 @Configuration
-@ConfigurationProperties(prefix = "sfg.jmsconfig", ignoreUnknownFields = false)
 public class JmsConfig {
-    public void setJmsQueue(String jmsQueue) {
-        this.jmsQueue = jmsQueue;
-    }
-
-    public String getJmsQueue() {
-        return jmsQueue;
-    }
-
-    private String jmsQueue;
+    public static final String JMS_INVENTORY_QUEUE = "jms-inventory-queue-2";
 
     @Bean
-    public MessageConverter messageConverter() {
+    public MessageConverter messageConverter(ObjectMapper objectMapper) {
         MappingJackson2MessageConverter mappingJackson2MessageConverter = new MappingJackson2MessageConverter();
         mappingJackson2MessageConverter.setTargetType(MessageType.TEXT);
         mappingJackson2MessageConverter.setTypeIdPropertyName("_type");
+        mappingJackson2MessageConverter.setObjectMapper(objectMapper);
         return mappingJackson2MessageConverter;
     }
 }

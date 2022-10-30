@@ -7,8 +7,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
-import sagar.springproject.events.BeerRequestDto;
-import sagar.springproject.events.NewInventoryEvent;
+import sagar.springproject.models.BeerRequestDto;
+import sagar.springproject.models.events.NewInventoryEvent;
 
 import javax.transaction.Transactional;
 

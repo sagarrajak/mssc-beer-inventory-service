@@ -1,4 +1,4 @@
-package guru.sfg.beer.inventory.service.web.model;
+package sagar.springproject.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

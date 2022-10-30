@@ -1,9 +1,10 @@
-package sagar.springproject.events;
+package sagar.springproject.models.events;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import sagar.springproject.models.BeerRequestDto;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package sagar.springproject.events;
+package sagar.springproject.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
